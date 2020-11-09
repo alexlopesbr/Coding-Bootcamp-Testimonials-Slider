@@ -3,12 +3,12 @@ html {
   font-family: 'Inter', sans-serif;
 }
 body {
-  background: url(images/pattern-bg.svg) no-repeat 89% 49%;
+  background: url(../images/pattern-bg.svg) no-repeat 89% 49%;
   background-size: 590px;
 }
 
 main {
-  background: url(images/pattern-curve.svg) no-repeat bottom left;
+  background: url(../images/pattern-curve.svg) no-repeat bottom left;
 }
 
 blockquote {
