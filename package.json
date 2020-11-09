@@ -1,0 +1,19 @@
+{
+  "name": "coding-bootcamp-testimonials-slider-master",
+  "version": "1.0.0",
+  "description": "![Design preview for the Coding Bootcamp Testimonials Slider coding challenge](./design/desktop-preview.jpg)",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint-config-prettier": "^6.15.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}

@@ -1,0 +1,266 @@
+/* --- General --- */
+html {
+  font-family: 'Inter', sans-serif;
+}
+body {
+  background: url(images/pattern-bg.svg) no-repeat 89% 49%;
+  background-size: 590px;
+}
+
+main {
+  background: url(images/pattern-curve.svg) no-repeat bottom left;
+}
+
+blockquote {
+  font-size: 2rem;
+  width: 650px;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  height: 100vh;
+
+  justify-content: center;
+  align-content: center;
+  position: relative;
+}
+
+/* --- User quote --- */
+
+.quote {
+  margin-right: -80px;
+  font-weight: 300;
+  z-index: 1;
+  animation: rightside 500ms forwards;
+  grid-area: quote;
+  position: relative;
+}
+
+.imgQuote {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: appear 500ms forwards;
+  animation-delay: 500ms;
+}
+
+cite {
+  font-style: normal;
+  font-weight: 700;
+}
+
+cite,
+span {
+  font-size: 1rem;
+}
+
+span {
+  color: #8585ac;
+}
+
+/* --- User picture --- */
+
+.picture {
+  grid-area: picture;
+}
+
+.user {
+  display: none;
+
+  grid-template-columns: 1fr 1fr;
+
+  max-width: 1024px;
+  align-items: center;
+
+  padding: 0 30px;
+
+  grid-template: 'quote picture';
+}
+
+.user.active {
+  display: grid;
+}
+
+.imgUser {
+  max-width: 460px;
+  float: right;
+  opacity: 0;
+  animation: botton 500ms forwards;
+  animation-delay: 250ms;
+  border-radius: 8px;
+}
+
+/* --- Buttons ---*/
+
+.buttons {
+  position: absolute;
+  display: flex;
+
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+
+.buttons button {
+  border-style: none;
+  margin: 0;
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1rem;
+}
+
+.buttons button:hover {
+  animation: background-change 200ms both;
+}
+
+#previous {
+  border-radius: 50% 0 0 50%;
+  -webkit-border-radius: 50% 0 0 50%;
+  -moz-border-radius: 50% 0 0 50%;
+}
+
+#next {
+  border-radius: 0 50% 50% 0;
+  -webkit-border-radius: 0 50% 50% 0;
+  -moz-border-radius: 0 50% 50% 0;
+}
+
+#previous::before,
+#next::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 0 auto;
+  border: #8585ac 3px;
+  border-style: none none solid solid;
+  transform: rotate(45deg);
+}
+
+#next::before {
+  border-style: solid solid none none;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+/* --- Animations --- */
+
+@keyframes background-change {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: hsl(240, 38%, 20%);
+  }
+}
+
+@keyframes rightside {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes botton {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- @medias --- */
+
+@media (max-width: 1025px) {
+  body {
+    background-position: center 8%;
+    background-size: 75%;
+  }
+
+  main {
+    background-size: 75%;
+  }
+
+  .quote {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+
+  span {
+    display: block;
+  }
+
+  .imgQuote {
+    width: 15%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .user {
+    grid-template:
+      'picture'
+      'quote';
+    align-items: flex-start;
+  }
+
+  .quote {
+    text-align: center;
+    margin-right: initial;
+    max-width: 80vw;
+  }
+
+  .imgUser {
+    max-width: 67vw;
+    margin-bottom: 80px;
+    margin: 0 auto 80px auto;
+  }
+
+  .buttons button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .attribution {
+    margin: 0 auto;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+  }
+}
+
+@media (max-width: 376px) {
+  body {
+    background: url(images/pattern-bg.svg) no-repeat center 8%;
+    background-size: 87%;
+  }
+}
+
+@media (max-width: 321px) {
+  .attribution {
+    display: none;
+  }
+}
