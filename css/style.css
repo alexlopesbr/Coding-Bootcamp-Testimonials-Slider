@@ -94,6 +94,7 @@ span {
   display: flex;
   border-radius: 50%;
   box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.3);
+  animation: appear 500ms forwards;
 }
 
 .buttons button {
